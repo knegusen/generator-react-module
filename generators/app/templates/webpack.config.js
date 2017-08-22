@@ -1,38 +1,27 @@
-'use strict'; //eslint-disable-line
-
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const pkg = require('./package').name;
 
-const DEV = process.env.NODE_ENV === 'development';
-
-const entry = DEV ?
-  ['webpack-hot-middleware/client', './docs/index.jsx'] :
-  './src/index.js';
-
-const plugins = DEV ? [
-  new webpack.HotModuleReplacementPlugin(),
-  new webpack.NoEmitOnErrorsPlugin(),
-  new HtmlWebpackPlugin({
-    filename: 'index.html',
-    template: './docs/index.html',
-  }),
-] : [];
-
 module.exports = {
-  entry,
+  entry: './docs/index.jsx',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'index.js',
     library: pkg.name,
     libraryTarget: 'umd',
   },
-  externals: DEV ? [] : ['react', 'react-dom'],
   resolve: {
     extensions: ['.js', '.jsx'],
   },
-  plugins,
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: './docs/index.html',
+    }),
+  ],
   devServer: {
     contentBase: path.join(__dirname, 'docs'),
     historyApiFallback: true,
@@ -45,7 +34,8 @@ module.exports = {
         loader: 'babel-loader',
         include: [
           path.join(__dirname, 'docs'),
-          path.join(__dirname, 'src')],
+          path.join(__dirname, 'src'),
+        ],
       },
     ],
   },

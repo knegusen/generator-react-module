@@ -33,6 +33,7 @@ module.exports = class extends Generator {
     this._copyFile('.eslintrc.json');
     this._copyFile('.gitattributes');
     this._copyFile('.gitignore');
+    this._copyFile('.nontemplates');
     this._copyFile('.npmrc');
     this._copyFile('changelog.md');
     this._copyFile('Jenkinsfile');

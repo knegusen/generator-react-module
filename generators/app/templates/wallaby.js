@@ -9,11 +9,4 @@ module.exports = wallaby => ({
     runner: 'node',
   },
   testFramework: 'jest',
-  setup: (wlby) => {
-    wlby.testFramework.configure({
-      moduleNameMapper: {
-        '\\.(css|scss)$': '<rootDir>/src/__mocks__/styleMock.js',
-      },
-    });
-  },
 });
