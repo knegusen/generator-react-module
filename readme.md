@@ -8,7 +8,7 @@ Install required tools:
 
 Install generator:
 
-```$ npm install -g generator-wallaby-webpack-react```
+```$ npm install -g generator-react-module```
 
 Make a new director, and cd into it:
 
@@ -16,7 +16,7 @@ Make a new director, and cd into it:
 
 Run yo wallaby-webpack-react:
 
-```$ yo wallaby-webpack-react```
+```$ yo react-module```
 
 ## Usage of generated project
 
