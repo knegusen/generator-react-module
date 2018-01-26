@@ -28,7 +28,7 @@ The module is built using babel.
 
 ### Developing
 
-When developing, there is an existing docs server to be able to look att the components you are building.
+When developing, there is an existing docs server to be able to look at the components you are building.
  
  ```$ npm run dev```
 
