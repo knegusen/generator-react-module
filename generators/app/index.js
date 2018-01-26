@@ -36,7 +36,6 @@ module.exports = class extends Generator {
     this._copyFile('.nontemplates');
     this._copyFile('.npmrc');
     this._copyFile('changelog.md');
-    this._copyFile('Jenkinsfile');
     this._copyFile('readme.md');
     this._copyFile('wallaby.js');
     this._copyFile('webpack.config.js');
